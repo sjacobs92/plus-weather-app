@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plus Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0a7dc1731b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <form id="city-search">
+          <input
+            type="text"
+            placeholder="Enter a city name..."
+            autocomplete="off"
+            autofocus="on"
+            aria-label="Location"
+            aria-describedby="button-addon2"
+            id="city-search-input"
+          />
+        <input
+          class="btn custom-btn btn-outline-secondary"
+          type="submit"
+          id="button-addon2"
+          value="Search"
+        >
+        </input>
+        </form>
+      
+      <br />
+      <h4></h4>
+      <br />
+      <h1 class="main-temp" id="city">Denver</h1>
+      <br/>
+      <h1 class="main-temp" id="temperature">75</h1>
+     <br/>
+      <h4 id="weather-description">Sunny</h4>
+     <br/>
+     <br/>
+
+      <div class="row">
+        <div class="col-3">
+          <i class="fas fa-sun custom-icon"></i>
+        </div>
+        <div class="col-3">
+          <i class="fas fa-cloud-sun custom-icon"></i>
+        </div>
+        <div class="col-3">
+          <i class="fas fa-cloud-rain custom-icon"></i>
+        </div>
+        <div class="col-3">
+          <i class="fas fa-snowflake custom-icon"></i>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-2 forecast-temp">
+          84<br /><span style="font-size: 15px"><em>Sunday</em></span>
+        </div>
+        <div class="col-2 forecast-temp">
+          84<br /><span style="font-size: 15px"><em>Monday</em></span>
+        </div>
+        <div class="col-2 forecast-temp">
+          84<br /><span style="font-size: 15px"><em>Tuesday</em></span>
+        </div>
+        <div class="col-2 forecast-temp">
+          84<br /><span style="font-size: 15px"><em>Wednesday</em></span>
+        </div>
+        <div class="col-2 forecast-temp">
+          84<br /><span style="font-size: 15px"><em>Thursday</em></span>
+        </div>
+        <div class="col-2 forecast-temp">
+          84<br /><span style="font-size: 15px"><em>Friday</em></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>

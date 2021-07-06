@@ -1,0 +1,60 @@
+body {
+  font-family: "Titillium Web", sans-serif;
+  text-align: center;
+  color: white;
+  display: block;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: #1d1738;
+}
+
+.container {
+  border: solid;
+  padding: 25px 25px 5px 25px;
+  margin: 40px auto;
+  background: linear-gradient(#b84963, #493563, #312357, #1d1738);
+  max-width: 1030px;
+}
+
+.main-temp {
+  display: inline-block;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.main-weather {
+  font-size: 30px;
+}
+
+.forecast-temp {
+  background: transparent;
+  font-size: 30px;
+  padding: 45px 0 45px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.forecast-temp:hover {
+  box-shadow: 0 0 10px white;
+  border-radius: 5%;
+}
+
+.custom-btn {
+  color: white;
+}
+
+.custom-btn:hover {
+  background-color: #312357;
+}
+
+.custom-icon {
+  font-size: 20px;
+}
