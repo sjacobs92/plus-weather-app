@@ -60,7 +60,7 @@ function showForecast(response) {
           <div class="forecast-temp">
           ${Math.round(
             forecastDay.temp.max
-          )}°<span class="forecast-temp-low">${Math.round(
+          )}°<span class="forecast-temp-low"> ${Math.round(
           forecastDay.temp.min
         )}°</span>
           </div>
