@@ -3,6 +3,14 @@ function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#wind-speed").innerHTML = `<em>Wind Speed: ${Math.round(response.data.wind.speed)} mph</em>`;
+  
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   console.log(response);
 }
 
@@ -21,6 +29,8 @@ function handleSubmit(event) {
 
 let searchForm = document.querySelector("#city-search");
 searchForm.addEventListener("submit", handleSubmit);
+
+citySearch("Denver");
 
 /* Use current date */
 let currentDate = new Date();
