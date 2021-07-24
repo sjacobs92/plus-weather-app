@@ -36,6 +36,50 @@ let month = months[currentDate.getMonth()];
 
 h4.innerHTML = `${day}, ${month} ${date}, ${year}`;
 
+/* forecast */
+function showForecast(response) {
+  console.log(response.data.daily);
+  let forecast = document.querySelector("#forecast");
+  let dailyForecast = response.data.daily;
+
+  let forecastHTML = `<div class="row">`;
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `    
+        <div class="col-2 forecast-box">
+          <div class="forecast-temp">
+          ${Math.round(
+            forecastDay.temp.max
+          )}°<span class="forecast-temp-low">/ ${Math.round(
+          forecastDay.temp.min
+        )}°</span>
+          </div>
+          <div class="forecast-date"><em>${shortenDay(forecastDay.dt)}</em>
+          </div>
+          <img src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png" width="55px" />
+          <div class="forecast-condition">${forecastDay.weather[0].main}
+        </div>
+        </div>
+      
+    `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "9303cf9f693da1c04c1d92345e2c9362";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial
+`;
+  axios.get(apiUrl).then(showForecast);
+}
+
 /* weather */
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
