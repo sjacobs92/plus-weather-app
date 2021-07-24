@@ -91,7 +91,8 @@ function getForecast(coordinates) {
 /* weather */
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temperature").innerHTML = `${Math.round(
+    response.data.main.temp)}°F` ;
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].main;
   document.querySelector("#wind-speed").innerHTML = `<em>Wind Speed: ${Math.round(response.data.wind.speed)} mph</em>`;
   
