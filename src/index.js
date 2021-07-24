@@ -36,6 +36,14 @@ let month = months[currentDate.getMonth()];
 
 h4.innerHTML = `${day}, ${month} ${date}, ${year}`;
 
+function shortenDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 /* forecast */
 function showForecast(response) {
   console.log(response.data.daily);
